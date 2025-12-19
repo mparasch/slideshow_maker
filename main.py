@@ -1,3 +1,9 @@
+import importlib.metadata, imageio
+try:
+    imageio.__version__ = importlib.metadata.version("imageio")
+except importlib.metadata.PackageNotFoundError:
+    imageio.__version__ = "2.37.2"  # your installed version
+    
 import os
 import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
