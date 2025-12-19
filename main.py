@@ -74,7 +74,14 @@ def run_conversion():
             video_clip = video_clip.with_audio(final_audio)
 
         # Write the file
-        video_clip.write_videofile(output, fps=24, codec="libx264", audio_codec="aac")
+        video_clip.write_videofile(
+            output, fps=24,
+            codec="libx264", 
+            audio_codec="aac",
+            threads=4,
+            preset='ultrafast',
+            logger=None
+        )
         
         status_label.config(text="Status: Success!", fg="green")
         messagebox.showinfo("Success", f"Video saved to:\n{output}")
