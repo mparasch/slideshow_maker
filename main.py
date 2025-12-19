@@ -11,6 +11,7 @@ from moviepy import (
     CompositeVideoClip
 )
 from proglog import ProgressBarLogger
+import imageio_ffmpeg
 
 # --- 1. LOW-OVERHEAD LOGGER ---
 class LazyLogger(ProgressBarLogger):
